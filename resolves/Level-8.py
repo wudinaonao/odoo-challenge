@@ -11,7 +11,7 @@ Description:
 """
 import requests
 from lxml import etree
-
+from typing import List, Tuple
 from ._Interface import IResolve
 
 
@@ -28,7 +28,7 @@ class Resolve(IResolve):
         html = etree.HTML(resp.text, etree.HTMLParser())
         results = html.xpath(xpath)
         if not results:
-            raise ValueError("解析失败")
+            raise ValueError("Parsing failed")
         answer = "".join(list(filter(lambda x: "#" not in x, results))).strip()
         answer = answer.replace("Password:'", "")
         answer = answer.replace("'", "")

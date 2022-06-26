@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 14:22:18
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 19:39:18
+LastEditTime: 2022-06-26 11:14:25
 Description: 
 
 
@@ -10,6 +10,7 @@ Description:
 
 """
 from abc import ABCMeta, abstractmethod
+from typing import List, Tuple
 
 import requests
 

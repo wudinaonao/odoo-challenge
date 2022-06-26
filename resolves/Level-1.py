@@ -2,13 +2,15 @@
 Author: wudinaonao
 Date: 2022-06-25 14:22:28
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 19:35:54
+LastEditTime: 2022-06-26 11:42:13
 Description: 
 
 
 
 
 """
+from typing import List, Tuple
+
 import requests
 from lxml import etree
 
@@ -26,5 +28,5 @@ class Resolve(IResolve):
         html = etree.HTML(response.text, etree.HTMLParser())
         results = html.xpath(xpath)
         if not results:
-            raise ValueError("解析失败")
+            raise ValueError("Parsing failed")
         return results[0]

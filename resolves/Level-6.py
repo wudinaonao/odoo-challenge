@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 19:57:48
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 20:05:26
+LastEditTime: 2022-06-26 11:15:38
 Description: 
 
 
@@ -11,7 +11,7 @@ Description:
 """
 import requests
 from lxml import etree
-
+from typing import List, Tuple
 from ._Interface import IResolve
 
 
@@ -26,18 +26,18 @@ class Resolve(IResolve):
         html = etree.HTML(response.text, etree.HTMLParser())
         results = html.xpath(xpath)
         if not results:
-            raise ValueError("解析失败")
+            raise ValueError("Parsing failed")
         code = results[0]
 
-        # 查找密文
+        # get encrypt string
         rows = list(filter(lambda row: "if(tmp == " in row, code.split("\n")))
         tmp = rows[0]
         tmp = tmp.replace("if(tmp == \"", "")
         tmp = tmp.replace("\")", "")
         tmp = tmp.strip()
         tmp = tmp.split(" ")
-        
-        # 解析
+
+        # Parsing
         idx = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         pwd = "".join([idx[int(index)] for index in tmp])
         return pwd

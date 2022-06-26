@@ -1,0 +1,16 @@
+certifi==2022.6.15
+charset-normalizer==2.0.12
+idna==3.3
+Js2Py==0.71
+lxml==4.9.0
+numpy==1.23.0
+Pillow==9.1.1
+pyjsparser==2.7.1
+pytz-deprecation-shim==0.1.0.post0
+pyzbar==0.1.9
+requests==2.28.0
+six==1.16.0
+tzdata==2022.1
+tzlocal==4.2
+urllib3==1.26.9
+yapf==0.32.0

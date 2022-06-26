@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 22:20:03
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 22:29:45
+LastEditTime: 2022-06-26 11:16:01
 Description: 
 
 
@@ -16,7 +16,7 @@ import requests
 from lxml import etree
 from PIL import Image
 from pyzbar.pyzbar import decode
-
+from typing import List, Tuple
 from ._Interface import IResolve
 
 
@@ -38,7 +38,7 @@ class Resolve(IResolve):
         html = etree.HTML(response.text, etree.HTMLParser())
         results = html.xpath(xpath)
         if not results:
-            raise ValueError("解析失败")
+            raise ValueError("Parsing failed")
 
         output = results[0].strip()
         output = output.split("\n")

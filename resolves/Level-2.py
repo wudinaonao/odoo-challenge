@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 14:22:35
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 19:40:12
+LastEditTime: 2022-06-26 11:14:48
 Description: 
 
 
@@ -10,7 +10,7 @@ Description:
 
 """
 import base64
-
+from typing import List, Tuple
 import requests
 
 from ._Interface import IResolve

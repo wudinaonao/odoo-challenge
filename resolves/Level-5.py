@@ -10,7 +10,7 @@ Description:
 
 """
 import base64
-
+from typing import List, Tuple
 import requests
 
 from ._Interface import IResolve

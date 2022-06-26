@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 22:06:24
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 22:19:30
+LastEditTime: 2022-06-26 11:15:54
 Description: 
 
 
@@ -16,7 +16,7 @@ import requests
 from lxml import etree
 from PIL import Image
 from pyzbar.pyzbar import decode
-
+from typing import List, Tuple
 from ._Interface import IResolve
 
 
@@ -31,7 +31,7 @@ class Resolve(IResolve):
         html = etree.HTML(response.text, etree.HTMLParser())
         results = html.xpath(xpath)
         if not results:
-            raise ValueError("解析失败")
+            raise ValueError("Parsing failed")
 
         png_string = results[0][2:-1]
         png_bytes = base64.b64decode(png_string)

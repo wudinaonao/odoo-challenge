@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 20:09:32
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 21:34:32
+LastEditTime: 2022-06-26 11:42:57
 Description: 
 
 
@@ -14,6 +14,7 @@ import decimal
 import json
 import math
 import time
+from typing import List, Tuple
 
 import requests
 
@@ -78,7 +79,7 @@ class Resolve(IResolve):
         self._session = session
 
     def _merge_url(self, response: requests.Response) -> str:
-        # 查找 URL 片段
+        # get url pieces
         part1 = response.headers.get("it-is-the-part-1-of-url")
         url = "https://www.odoo.com/jobs/challenge/challenge.css"
         resp = self._session.get(url)

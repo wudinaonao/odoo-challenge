@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 19:45:17
 LastEditors: wudinaonao
-LastEditTime: 2022-06-25 19:46:26
+LastEditTime: 2022-06-26 11:16:23
 Description: 
 
 
@@ -10,6 +10,7 @@ Description:
 
 """
 import base64
+from typing import List, Tuple
 
 import requests
 
@@ -26,5 +27,5 @@ class Resolve(IResolve):
         answer =  response.headers.get(
             "it-is-the-long-secret-that-you-are-looking-for")
         if not answer:
-            raise ValueError("解析失败")
+            raise ValueError("Parsing failed")
         return answer
