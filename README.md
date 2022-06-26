@@ -8,7 +8,8 @@ Odoo is a fun challenge, originated from an interview question, the intervieewr 
 
 all rigth, accept the challenge.
 
-> challenge url  
+Challenge Url  
+
 > https://www.odoo.com/jobs/challenge
 
 My blog records all my problem solving ideas.
