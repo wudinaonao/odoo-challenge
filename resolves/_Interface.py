@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-25 14:22:18
 LastEditors: wudinaonao
-LastEditTime: 2022-06-26 11:14:25
+LastEditTime: 2022-06-26 11:53:43
 Description: 
 
 
@@ -26,8 +26,3 @@ class IResolve(metaclass=ABCMeta):
     def crack(self, response: requests.Response) -> str:
         ...
 
-    def submit(self, answer: str, csrf_token: str) -> bool:
-        url = "https://www.odoo.com/jobs/challenge/submit"
-        data = {"csrf_token": csrf_token, "pwd": answer, "signup": ""}
-        resp = self._session.post(url, data=data)
-        
