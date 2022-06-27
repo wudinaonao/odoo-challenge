@@ -19,6 +19,23 @@
             "program": "Main.py",
             "console": "integratedTerminal",
             "justMyCode": true
-        }
+        },
+        {
+            "name": "App.py",
+            "type": "python",
+            "request": "launch",
+            "program": "App.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "FLASK_APP": "App.py",
+                "FLASK_ENV": "development",
+                "FLASK_DEBUG": "1",
+            },
+            "args": [
+                "config.yaml"
+            ],
+            "justMyCode": false
+        },
     ]
 }
