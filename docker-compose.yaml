@@ -2,20 +2,15 @@
 version: "3.1"
 
 services:
-  flask-apartment-manager:
-    # 构建参数
-    build:
-      args:
-        BUILD_DATE: $(date "+%F %T")
-    #
+  flask-odoo-challenge:
     image: wudinaonao/flask-odoo-challenge:latest
     tty: true
     restart: always
     container_name: "flask-odoo-challenge"
     entrypoint: python /usr/app/App.py
     ports:
-    - "8853:5000"
-    volumes:
+    - "8854:5000"
+    # volumes:
       # config file path
       # - "${PWD}/config-test.yaml:/etc/app/config.yaml"
       # - "${PWD}/log:/usr/app/log"

@@ -2,7 +2,7 @@
 Author: wudinaonao
 Date: 2022-06-27 01:56:13
 LastEditors: wudinaonao
-LastEditTime: 2022-06-27 15:18:59
+LastEditTime: 2022-06-27 15:29:14
 Description: 
 
 
@@ -15,10 +15,11 @@ monkey.patch_all()
 
 import mimetypes
 import multiprocessing
+import os
 import threading
 import time
-from typing import Dict
-import os
+from typing import Dict, Tuple
+
 import gunicorn.app.base
 import requests
 from flask import Flask, jsonify, render_template, request
@@ -210,7 +211,7 @@ class Scheduler(object):
         clear_expired.name = "Clear expired task"
         clear_expired.start()
 
-    def get(self, email: str) -> Solve | None:
+    def get(self, email: str) -> Tuple[Solve, None]:
         if email in self._tasks:
             return self._tasks[email]
         return None
@@ -275,7 +276,7 @@ if __name__ == '__main__':
     port = 5000
     options = {
         "bind": f"{str(host)}:{str(port)}",
-        "workers": (multiprocessing.cpu_count() * 2) + 1,
+        "workers": 1,
         "worker_class": "gevent",
     }
     GunicornBootstrap(app, options).run()

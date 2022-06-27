@@ -22,6 +22,7 @@ RUN echo "" > /etc/apt/sources.list \
     && echo "deb-src http://mirrors.cloud.tencent.com/debian/ buster-backports main non-free contrib" >> /etc/apt/sources.list \
     && apt update \
     && apt install python3-opencv -y \
+    && apt install libzbar0 -y \
     && apt install default-libmysqlclient-dev gcc -y \
     && mkdir log
 
