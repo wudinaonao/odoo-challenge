@@ -24,7 +24,7 @@ Because i'm a Pythoner!
 
 **ANYTHING THAT CAN BE AUTOMATED SHOULD BE AUTOMATED !**
 
-## Using
+## How to Using
 
 First install package
 ```
@@ -77,3 +77,36 @@ hello_john@gmail.com
 ![](https://chevereto.wudinaonao.com/images/2022/06/26/image86163c77feaf84c3.png)
 
 Nice !
+
+## Docker
+
+I built a SPA based on Flask, Vue 3
+
+![](https://chevereto.wudinaonao.com/images/2022/06/27/image.png)
+
+Now, you can build the docker image
+
+```
+docker build --build-arg BUILD_DATE="$(date "+%F %T")"  --tag wudinaonao/flask-odoo-challenge:latest .
+```
+
+Run container
+```
+docker-compose up -d
+```
+
+OK, now we can open browser, input url `http://127.0.0.0:8854`
+
+very nice!
+
+input a email, then click button
+
+waiting...
+
+![](https://chevereto.wudinaonao.com/images/2022/06/27/image66bfc8dc1e7c44c7.png)
+
+good !
+
+Maybe you can use the website I have built ...
+
+> https://odoo.wudinaonao.com

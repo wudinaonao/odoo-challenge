@@ -10,16 +10,10 @@ services:
     entrypoint: python /usr/app/App.py
     ports:
     - "8854:5000"
-    # volumes:
-      # config file path
-      # - "${PWD}/config-test.yaml:/etc/app/config.yaml"
-      # - "${PWD}/log:/usr/app/log"
-      # load video save directory for clean invalid file.
-      # - /home/ubuntu/downloads/porn/caoliu:/downloads
     logging:
       driver: "json-file"
       options:
         max-size: "100m"
 
-# 命令行构建
-# docker build --build-arg BUILD_DATE="$(date "+%F %T")"  --tag wudinaonao/flask-apartment-management:test .
+# build command
+# docker build --build-arg BUILD_DATE="$(date "+%F %T")"  --tag wudinaonao/flask-odoo-challenge:latest .
